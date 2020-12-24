@@ -10,17 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 class ConferenceController extends AbstractController
 {
     /**
-     * @Route("/hello/{name}", name="conference")
+     * @Route("/", name="homepage")
      */
-    public function index(string $name): Response
+    public function index(): Response
     {
-        $greet = '';
-        //if($name = $request->query->get('hello')){
-        if($name){
-            $greet = sprintf('<h1>Hello %s!</h1>', htmlspecialchars($name));
-        }
-        return $this->render('conference/index.html.twig',[
-            'name' => $name
-        ] );
+        return $this->render('conference/index.html.twig');
     }
 }
