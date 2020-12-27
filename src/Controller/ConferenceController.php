@@ -9,14 +9,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ConferenceController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function index(ConferenceRepository $conferenceRepository): Response
+    public function index(ConferenceRepository $conferenceRepository, SessionInterface $session): Response
     {
+        $session->set('prueba2', 'hola mundo');
+        dump($session->get('prueba2'));
         $conferences = $conferenceRepository->findAll();
         return $this->render('conference/index.html.twig', [
             'conferences' => $conferences
