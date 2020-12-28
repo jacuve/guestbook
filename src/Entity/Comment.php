@@ -51,7 +51,7 @@ class Comment
     private $photoFilename;
 
     /**
-     * @ORM/PrePersist()
+     * @ORM\PrePersist()
      */
     public function setCreatedAtValue()
     {

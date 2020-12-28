@@ -29,7 +29,7 @@ class ConferenceController extends AbstractController
     // nueva pagina. 
     // Otra opcion es crear un controlador nuevo para cada pagina
     /**
-     * @Route("/conference/{id}", name="conference")
+     * @Route("/conference/{slug}", name="conference")
      */
     public function show(Request $request, CommentRepository $commentRepository, Conference $conference)
     {
